@@ -1,3 +1,27 @@
+
+# Дополнительное задание
+
+что сделанно -
+установил axios
+npm install axios
+установил Redux
+npm install react-router-dom redux react-redux @reduxjs/toolkit redux-observable rxjs
+установил tailwind
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
