@@ -4,6 +4,7 @@ import { setNotification, clearNotification } from '../../features/notifications
 import Button from "../Button";
 import Notifications from "../Notifications";
 import handleSurpriseClick from "./handleSurpriseClick";
+import { Link } from 'react-router-dom';
 
 function Home() {
     const dispatch = useDispatch();
@@ -30,9 +31,14 @@ function Home() {
             <div className="flex justify-center mt-4">
                 <Button onClick={handleSurpriseClick}>Сюрприз!</Button>
             </div>
-                <Notifications/>
+            <div className="flex justify-center mt-4">
+                <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Войти
+                </Link>
+            </div>
+            <Notifications/>
         </main>
-);
+    );
 }
 
 export default Home;

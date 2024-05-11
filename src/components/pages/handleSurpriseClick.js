@@ -24,9 +24,9 @@ const handleSurpriseClick = async () => {
                 </style>
             </head>
             <body>
-                <img src="/raccoon.gif" alt="Loading..." />
+                <img src="${window.location.origin}/images/raccoon.gif" alt="Loading..." />
                 <audio autoplay>
-                    <source src="/pedro_pedro.mp3" type="audio/mpeg">
+                    <source src="${window.location.origin}/pedro_pedro.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </body>

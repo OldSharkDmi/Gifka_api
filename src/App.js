@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import TopGifsPage from './components/pages/TopGifsPage';
 import SearchPage from "./components/pages/SearchPage";
 import RandomGifPage from "./components/pages/RandomGifPage";
+import Login from "./components/pages/Login";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/topGifs" element={<TopGifsPage />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/random" element={<RandomGifPage />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
             <Footer />
         </div>
