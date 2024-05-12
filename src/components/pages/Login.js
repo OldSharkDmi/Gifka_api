@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import { setUser } from '../../features/notificationsSlice';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -17,12 +18,10 @@ function Login() {
             return;
         }
         try {
-            const response = await axios.post('/login', { username, password });
+            const response = await axios.post('http://localhost:5000/login', { username, password });
             const { success, role, message, access_token } = response.data;
             if (success) {
-                // Сохраняем токен доступа в сторе (например, Redux)
-                dispatch({ type: 'LOGIN_SUCCESS', payload: { username, role, access_token } });
-                // Переходим на главную страницу
+                dispatch(setUser(username)); // cохраннеи имя юзерк в хранилище редукс
                 navigate('/');
             } else {
                 setError(message);

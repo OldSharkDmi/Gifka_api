@@ -1,6 +1,8 @@
+
+
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setNotification, clearNotification } from '../../features/notificationsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {setNotification, clearNotification, selectUser} from '../../features/notificationsSlice';
 import Button from "../Button";
 import Notifications from "../Notifications";
 import handleSurpriseClick from "./handleSurpriseClick";
@@ -8,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         dispatch(setNotification({ id: new Date().getTime(), message: "React Redux работает" }));
@@ -20,9 +23,11 @@ function Home() {
     return (
         <main className="flex-grow bg-white p-8">
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
-                    Приложение для просмотра гифок
-                </h1>
+                {user && (
+                    <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
+                        Добро пожаловать, {user}!
+                    </h1>
+                )}
                 <p className="text-lg text-gray-600 text-center mb-10">
                     Это приложение позволяет пользователям искать и просматривать различные гифки.
                     Используйте поиск, вывод топа и т.д.
