@@ -2,7 +2,7 @@ import { from } from 'rxjs';
 import axios from 'axios';
 
 
-const api_key = 'h8cw7zZCBdRG6tKfd5bnYNtDPvUr4UQO';
+const api_key = '';
 const baseURL = 'https://api.giphy.com/v1/gifs';
 
 export const fetchRandomGif = () => {
